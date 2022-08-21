@@ -1,72 +1,11 @@
 import React from 'react'
+import Footer from '../components/footer.component'
+import Header from '../components/header.component'
 import '../css/style.css'
 const HomeView = () => {
 
-    function onAccountIconClickHandler(event: React.MouseEvent) {
-        console.log("Clicked")
-        document.getElementById('header__links')?.classList.toggle('header__links--active')
-        document.getElementById('account')?.classList.toggle('open')
-    }
-
     return (
         <div>
-            <header className="header">
-                <div className="header__top">
-                    <div className="container">
-                        <div className="header__top-inner">
-                            <a className="header__logo" href="#">
-                                <img
-                                    className="logo__img"
-                                    src="images/logo.svg"
-                                    alt="logo"
-                                    title="logo"
-                                />
-                            </a>
-                            <nav className="buttons">
-                                <a className="buttons__link" href="https://cbfpoolga.com/NFLSheet">
-                                    NFL SHEETS
-                                </a>
-                                <a className="buttons__link" href="https://cbfpoolga.com/NFLMaster">
-                                    NCAAF SHEETS
-                                </a>
-                                <a
-                                    className="buttons__link link-master"
-                                    href="https://cbfpoolga.com/NCCASheet"
-                                >
-                                    NFL MASTER
-                                </a>
-                                <a
-                                    className="buttons__link link-master"
-                                    href="https://cbfpoolga.com/NCCAMaster"
-                                >
-                                    NCAAF MASTER
-                                </a>
-                            </nav>
-                            <div id='header__links' className="header__links">
-                                <a className="header__link" href="#">
-                                    Log In
-                                </a>
-                                <a className="header__link" href="#">
-                                    Sign Up
-                                </a>
-                            </div>
-                            <div id='account' className="account" onClick={onAccountIconClickHandler}>
-                                <img
-                                    className="account__img"
-                                    src="images/account.svg"
-                                    alt="account icon"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="container">
-                    <h1 className="header__title">
-                        Your #1 <br />
-                        football pool
-                    </h1>
-                </div>
-            </header>
             <main className="main">
                 <section className="how">
                     <div className="container">
@@ -280,11 +219,7 @@ const HomeView = () => {
                     </div>
                 </section>
             </main>
-            <footer className="footer">
-                <div className="container">
-                    <p className="copyright">© CBFPOOLGA 2022</p>
-                </div>
-            </footer>
+            
         </div>
 
     )
