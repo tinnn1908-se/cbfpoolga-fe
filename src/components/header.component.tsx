@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
@@ -32,9 +33,10 @@ const Header = () => {
                             />
                         </a>
                         <nav className="buttons">
-                            <a className="buttons__link" href="https://cbfpoolga.com/NFLSheet">
+                            {/* <a className="buttons__link" href="https://cbfpoolga.com/NFLSheet">
                                 NFL SHEETS
-                            </a>
+                            </a> */}
+                            <Link className="buttons__link" to='/nflsheetview'>NFL SHEETS</Link>
                             <a className="buttons__link" href="https://cbfpoolga.com/NFLMaster">
                                 NCAAF SHEETS
                             </a>

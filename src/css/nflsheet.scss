@@ -1,0 +1,25 @@
+.nflsheet {
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    .__top,
+    .__bottom,
+    .__middle {
+        width: 80%;
+    }
+    .top{
+        display: flex;
+    }
+    .__middle{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+     
+
+}
