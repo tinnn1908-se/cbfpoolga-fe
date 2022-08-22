@@ -11,15 +11,47 @@
     .__middle {
         width: 80%;
     }
-    .top{
+
+    .__top{
         display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        >button{
+            padding: 15px 30px 14px;
+            background-color: #10110f;
+            color: #fff;
+            font-size: 16px;
+            line-height: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.5s;
+            width: 99%;
+            margin: 0 0.5%;
+            cursor: pointer;
+            &:hover{
+                background-color: #dd082f;
+            }
+        }
     }
-    .__middle{
+
+    .__middle {
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-     
 
+}
+
+@media print {
+    @page {
+        size: portrait;
+    }
+}
+
+@media print {
+    .pagebreak {
+        page-break-before: always;
+    }
 }

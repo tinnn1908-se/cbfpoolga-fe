@@ -54,10 +54,10 @@ const Header = () => {
                             </a>
                         </nav>
                         <div id='header__links' className="header__links">
-                            <a style={{ 'cursor': 'pointer ' }} className="header__link" id='signin' onClick={onClickHandler} >
+                            <a style={{ 'cursor': 'pointer ','color' : '#fff' }} className="header__link" id='signin' onClick={onClickHandler} >
                                 Sign In
                             </a>
-                            <a style={{ 'cursor': 'pointer ' }} className="header__link" id='signup' onClick={onClickHandler}>
+                            <a style={{ 'cursor': 'pointer ','color' : '#fff' }} className="header__link" id='signup' onClick={onClickHandler}>
                                 Sign Up
                             </a>
                         </div>
