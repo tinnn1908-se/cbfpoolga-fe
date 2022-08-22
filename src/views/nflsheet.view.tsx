@@ -3,7 +3,7 @@ import { Game } from '../models';
 import NFLSheetService from '../services/nflsheet.service';
 import '../css/nflsheet.scss'
 import { Col, Container, Row, Table } from 'react-bootstrap';
-import { Checkbox } from '@mui/material';
+import { Checkbox, TextField } from '@mui/material';
 import Form from 'react-bootstrap/Form';
 import ReactToPrint from 'react-to-print'
 import NFLSheetPDF from '../components/pdf/nflsheet.pdf';
@@ -426,7 +426,10 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
             <div className='__top' >
                 <h3>Due :Friday, August , 26,2022</h3>
                 <h3>Cash App: $CBFPOOLGA</h3>
-                <button onClick={printHandler}>Print this out!</button>
+                <div className='buttons'>
+                    <button onClick={printHandler}>Print sheets out !</button>
+                    <button onClick={printHandler}>Submit sheets !</button>
+                </div>
             </div>
             <div className='__middle' ref={componentRef}>
                 <Container>
@@ -492,8 +495,11 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                             </Table>
                         </Col>
                         <Col>
-                            <Table bordered responsive>
+                            <Table striped bordered responsive>
                                 <thead>
+
+                                </thead>
+                                <tbody>
                                     <tr>
                                         <th style={{
                                             'fontSize': '16px',
@@ -537,8 +543,6 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                                         <th></th>
 
                                     </tr>
-                                </thead>
-                                <tbody>
                                     {games.map((game, index) => (
                                         <tr>
                                             <th>{(index + 1) * 2 - 1}</th>
@@ -585,20 +589,30 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                                             <th>{(index + 1) * 2}</th>
                                         </tr>
                                     ))}
+                                    <tr>
+                                        <th colSpan={8} >^^ Tiebreaker Game ^^</th>
+                                        <th colSpan={2}></th>
+                                        <th colSpan={8} >^^ Tiebreaker Game ^^</th>
+                                    </tr>
+                                    <tr>
+                                        <th colSpan={8} ><input style={{ 'textAlign': 'center' }} type="text" name="" id="" /></th>
+                                        <th colSpan={2}></th>
+                                        <th colSpan={8} ><input style={{ 'textAlign': 'center' }} type="text" name="" id="" /></th>
+                                    </tr>
                                 </tbody>
                             </Table>
                         </Col>
                     </Row>
                     {
-                        Array.from([1, 2]).map((i) => (
+                        Array.from([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]).map((i) => (
                             <Container>
                                 <Row>
                                     <Col>
-                                        <Table bordered responsive style={{
+                                        <Table striped bordered responsive style={{
                                             'marginTop': '150px',
                                             'marginBottom': ' 150px'
                                         }} >
-                                            <thead>
+                                            <tbody>
                                                 <tr>
                                                     <th style={{
                                                         'fontSize': '16px',
@@ -642,8 +656,6 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                                                     <th></th>
 
                                                 </tr>
-                                            </thead>
-                                            <tbody>
                                                 {games.map((game, index) => (
                                                     <tr>
                                                         <th>{(index + 1) * 2 - 1}</th>
@@ -690,15 +702,25 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                                                         <th>{(index + 1) * 2}</th>
                                                     </tr>
                                                 ))}
+                                                <tr>
+                                                    <th colSpan={8} >^^ Tiebreaker Game ^^</th>
+                                                    <th colSpan={2}></th>
+                                                    <th colSpan={8} >^^ Tiebreaker Game ^^</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colSpan={8} ><input style={{ 'textAlign': 'center' }} type="text" name="" id="" /></th>
+                                                    <th colSpan={2}></th>
+                                                    <th colSpan={8} ><input style={{ 'textAlign': 'center' }} type="text" name="" id="" /></th>
+                                                </tr>
                                             </tbody>
                                         </Table>
                                     </Col>
                                     <Col>
-                                        <Table bordered responsive style={{
+                                        <Table striped bordered responsive style={{
                                             'marginTop': '150px',
                                             'marginBottom': ' 150px'
                                         }} >
-                                            <thead>
+                                            <tbody>
                                                 <tr>
                                                     <th style={{
                                                         'fontSize': '16px',
@@ -737,13 +759,11 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                                                     <th style={{
                                                         'fontSize': '14px',
                                                         'textDecoration': 'underline'
-                                                    }} colSpan={3}>                                        <th colSpan={3}>Home</th>
+                                                    }} colSpan={3}><th colSpan={3}>Home</th>
                                                     </th>
                                                     <th></th>
 
                                                 </tr>
-                                            </thead>
-                                            <tbody>
                                                 {games.map((game, index) => (
                                                     <tr>
                                                         <th>{(index + 1) * 2 - 1}</th>
@@ -789,7 +809,18 @@ const NFLSheetView = React.forwardRef<HTMLDivElement, any>((props, ref) => {
                                                         </th>
                                                         <th>{(index + 1) * 2}</th>
                                                     </tr>
+
                                                 ))}
+                                                <tr>
+                                                    <th colSpan={8} >^^ Tiebreaker Game ^^</th>
+                                                    <th colSpan={2}></th>
+                                                    <th colSpan={8} >^^ Tiebreaker Game ^^</th>
+                                                </tr>
+                                                <tr>
+                                                    <th colSpan={8} ><input style={{ 'textAlign': 'center' }} type="text" name="" id="" /></th>
+                                                    <th colSpan={2}></th>
+                                                    <th colSpan={8} ><input style={{ 'textAlign': 'center' }} type="text" name="" id="" /></th>
+                                                </tr>
                                             </tbody>
                                         </Table>
                                     </Col>

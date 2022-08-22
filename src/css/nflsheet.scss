@@ -12,27 +12,32 @@
         width: 80%;
     }
 
-    .__top{
+    .__top {
         display: flex;
         flex-direction: column;
         margin-top: 50px;
         margin-bottom: 50px;
-        >button{
-            padding: 15px 30px 14px;
-            background-color: #10110f;
-            color: #fff;
-            font-size: 16px;
-            line-height: 17px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.5s;
-            width: 99%;
-            margin: 0 0.5%;
-            cursor: pointer;
-            &:hover{
-                background-color: #dd082f;
+
+        .buttons {
+            >button {
+                padding: 15px 30px 14px;
+                background-color: #10110f;
+                color: #fff;
+                font-size: 16px;
+                line-height: 17px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.5s;
+                width: 99%;
+                margin: 0 0.5%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #dd082f;
+                }
             }
         }
+
     }
 
     .__middle {
@@ -44,14 +49,42 @@
 
 }
 
-@media print {
-    @page {
-        size: portrait;
+// @media print {
+//     @page {
+//         size: portrait;
+//     }
+// }
+
+// @media print {
+//     .pagebreak {
+//         page-break-before: always;
+//     }
+// }
+@media all {
+    .page-break {
+        display: none;
     }
 }
 
 @media print {
-    .pagebreak {
-        page-break-before: always;
+
+    html,
+    body {
+        height: initial !important;
+        overflow: initial !important;
+        -webkit-print-color-adjust: exact;
     }
+}
+
+@media print {
+    .page-break {
+        margin-top: 1rem;
+        display: block;
+        page-break-after: always;
+    }
+}
+
+@page {
+    size: auto;
+    margin: 20mm;
 }

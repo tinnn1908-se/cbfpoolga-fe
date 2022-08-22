@@ -378,6 +378,25 @@ body {
 	padding: 15px 0;
 	background-color: #1d1d1d;
 }
+.footer__container__pageUp {
+    position: fixed;
+    width: 41px;
+    height: 41px;
+    top: 80%;
+    left: 95%;
+    background: #10110f;
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+}
 .copyright {
 	color: #fff;
 	text-align: center;
