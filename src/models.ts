@@ -18,7 +18,7 @@ export interface Picking {
     entry: string,
     user_id: string,
     tiebreak: number,
-    isChanged : boolean
+    isChanged: boolean
 }
 
 export interface Pickingdetails {
@@ -31,7 +31,7 @@ export interface Pickingdetails {
     selected_team_number: number,
     isLastgame: boolean,
     pickingId: string,
-    isChanged : boolean
+    isChanged: boolean
 }
 
 export interface User {
@@ -42,4 +42,16 @@ export interface User {
     created_date: string,
     is_activated: boolean,
     is_deleted: boolean
+}
+export interface SignupRequest {
+    username: string,
+    password: string,
+    email: string,
+    confirmPassword: string
+}
+export const initialSignupRequest: SignupRequest = {
+    username: '',
+    password: '',
+    email: '',
+    confirmPassword: ''
 }

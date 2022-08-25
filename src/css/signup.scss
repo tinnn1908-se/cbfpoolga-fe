@@ -1,0 +1,86 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+
+
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        min-width: 300px;
+        border: 1px solid #333633;
+        border-radius: 8px;
+        margin-top: 2%;
+        margin-bottom: 2%;
+
+        >h2 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .line {
+            border: 0.25px solid #9d9e9d;
+        }
+
+        .txtUsername,
+        .txtConfirmPassword,
+        .txtEmail,
+        .txtPassword,
+        .forgetPasswordBtn,
+        .signupBtn,
+        .signup-form-footer {
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+
+        .txtUsername,
+        .txtEmail,
+        .txtPassword,
+        .forgetPasswordBtn,
+        .signupBtn,
+        .signup-form-footer {
+            margin-top: 20px;
+        }
+
+        .txtConfirmPassword,
+        .txtPassword,
+        .forgetPasswordBtn,
+        .signupBtn,
+        .signup-form-footer {
+            margin-bottom: 20px;
+        }
+
+
+
+        .signupBtn {
+            padding: 15px 30px 14px;
+            background-color: #10110f;
+            color: #fff;
+            font-size: 16px;
+            line-height: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.5s;
+            border: none-;
+
+            &:hover {
+                background-color: #dd082f;
+            }
+        }
+
+        >p {
+            text-align: center;
+            font-size: 16px;
+            color: #616161;
+
+            >a {
+                font-size: 16px;
+                color: #dd082f;
+            }
+        }
+    }
+}

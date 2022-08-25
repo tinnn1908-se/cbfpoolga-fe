@@ -1,8 +1,6 @@
 import { TextField } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Footer from '../components/footer.component'
-import Header from '../components/header.component'
 import '../css/login.scss'
 const LoginView = () => {
     function onClickHandler(event: React.MouseEvent) {
