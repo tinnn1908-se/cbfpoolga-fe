@@ -1,6 +1,7 @@
-import { SignupRequest } from "../models";
+import { SigninRequest, SignupRequest, User } from "../models";
 import HTTP from "./http.common";
 import request from 'axios'
+import { Http } from "@mui/icons-material";
 
 export default class UserAPI {
     static async register(singupReq: SignupRequest) {
@@ -32,5 +33,37 @@ export default class UserAPI {
             }
         }
         return isEmailVerified;
+    }
+    static async signin(signinRequest: SigninRequest) {
+        // authen 
+        // return token
+        // author
+        // return user
+        var tokens: {
+            access_token: string,
+            refresh_token: string
+        } = {
+            access_token: '', refresh_token: ''
+        }
+        var user: User | null = null;
+        console.log('signinrequest : ' + signinRequest.password)
+        try {
+            var authenResponse = await HTTP.post('api/auth/authentication', signinRequest);
+            if (authenResponse.status === 200 && authenResponse.data) {
+                tokens = authenResponse.data.tokens;
+                console.log("tokens : " + Object.values(tokens))
+                var authorResponse = await HTTP.post('api/auth/authorization', tokens);
+                user = authorResponse.data.user;
+                if (user) {
+                    user.tokens = tokens;
+                    return user;
+                }
+            }
+            return null;
+        } catch (error) {
+            if (request.isAxiosError(error)) {
+                return null;
+            }
+        }
     }
 }
