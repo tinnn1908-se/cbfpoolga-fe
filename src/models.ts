@@ -41,7 +41,11 @@ export interface User {
     email: string,
     created_date: string,
     is_activated: boolean,
-    is_deleted: boolean
+    is_deleted: boolean,
+    tokens : {
+        access_token : string,
+        refresh_token : string
+    }
 }
 export interface SignupRequest {
     username: string,
@@ -49,9 +53,38 @@ export interface SignupRequest {
     email: string,
     confirmPassword: string
 }
+
+export interface SigninRequest {
+    username: string,
+    email: string,
+    password: string
+}
 export const initialSignupRequest: SignupRequest = {
     username: '',
     password: '',
     email: '',
     confirmPassword: ''
+}
+
+export interface IAuth {
+    isLoggedIn: boolean,
+    user: User | null,
+    tokens: {
+        access_token: string,
+        refresh_token: string
+    };
+}
+export const initialAuth: IAuth = {
+    isLoggedIn: false,
+    user: null,
+    tokens: {
+        access_token: '',
+        refresh_token: ''
+    }
+}
+
+export interface IModal {
+    title: string,
+    isOpen: boolean,
+    message: string
 }

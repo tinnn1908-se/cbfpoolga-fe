@@ -1,0 +1,14 @@
+.loading {
+    margin-top: 125px;
+    margin-bottom: 125px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    >svg{
+        transform: translate(-50%,-50%);
+    }
+}

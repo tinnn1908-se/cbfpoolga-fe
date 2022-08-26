@@ -7,10 +7,9 @@ import HomeView from './views/home.view';
 import LoginView from './views/login.view';
 import NFLSheetView from './views/nflsheet.view';
 import SignupView from './views/signup.view';
-
 function App() {
   return (
-    <div className="App">
+    <div className="pp">
       <Header />
       <Routes>
         <Route path='/' element={<HomeView />} />
