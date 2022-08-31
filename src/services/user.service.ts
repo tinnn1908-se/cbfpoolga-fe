@@ -1,5 +1,5 @@
 import UserAPI from "../apis/http.user";
-import { SigninRequest, SignupRequest, User } from "../models";
+import { Picking, SigninRequest, SignupRequest, User } from "../models";
 
 export default class UserService {
     static async register(signupRequest: SignupRequest) {
@@ -23,5 +23,11 @@ export default class UserService {
         var user: User | null | undefined = await UserAPI.signin(signinRequest);
         return user;
 
+    }
+    static async submitSheets(pickings: Array<Picking>) {
+        return await UserAPI.submitSheets(pickings);
+    }
+    static async getPickings() {
+        return await UserAPI.getPickings();
     }
 }

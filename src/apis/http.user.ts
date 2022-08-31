@@ -1,4 +1,4 @@
-import { SigninRequest, SignupRequest, User } from "../models";
+import { Picking, PickingResponse, SigninRequest, SignupRequest, User } from "../models";
 import HTTP from "./http.common";
 import request from 'axios'
 import { Http } from "@mui/icons-material";
@@ -63,6 +63,35 @@ export default class UserAPI {
         } catch (error) {
             if (request.isAxiosError(error)) {
                 return null;
+            }
+        }
+    }
+    static async submitSheets(pickings: Array<Picking>) {
+        try {
+            var resp = await HTTP.post(`api/user/submitsheets`, {
+                pickings: pickings
+            });
+            if (resp && resp.status === 200) return true;
+            return false;
+        } catch (error) {
+            if (request.isAxiosError(error)) {
+                console.log(error)
+            }
+        }
+    }
+    static async getPickings() {
+        try {
+            var resp = await HTTP.get('api/user/getPickings');
+            var pickings: Array<PickingResponse> = [];
+            if (resp && resp.status === 200 && typeof resp !== 'undefined') {
+                pickings = resp.data.pickings;
+                console.log("getPickings : " + Object.values(pickings))
+                return pickings;
+            };
+            return [];
+        } catch (error) {
+            if (request.isAxiosError(error)) {
+                console.log(error)
             }
         }
     }
