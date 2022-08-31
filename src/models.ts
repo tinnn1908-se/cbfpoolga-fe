@@ -16,22 +16,45 @@ export interface Game {
 export interface Picking {
     id: string,
     entry: string,
-    user_id: string,
-    tiebreak: number,
+    username: string,
+    tiebreak: string,
     isChanged: boolean
+    pickingdetails: Array<Pickingdetail>
 }
-
-export interface Pickingdetails {
+export interface PickingResponse {
+    id: string,
+    entry: string,
+    username: string,
+    tiebreak: string,
+    counter: number;
+    pickingdetails: Array<Pickingdetail>
+}
+export interface Pickingdetail {
+    gameNo: number,
     awayteam: string,
     awayscore: string,
     awaynumber: number,
     hometeam: string,
     homescore: string,
     homenumber: number,
-    selected_team_number: number,
+    selected_team: string,
     isLastgame: boolean,
-    pickingId: string,
+    pickingDetailId: string,
     isChanged: boolean
+}
+
+export const initialPickingDetail: Pickingdetail = {
+    gameNo: 9999,
+    pickingDetailId: '',
+    awayteam: '',
+    awaynumber: 0,
+    awayscore: '',
+    homenumber: 0,
+    homescore: '',
+    hometeam: '',
+    isChanged: false,
+    isLastgame: false,
+    selected_team: ''
 }
 
 export interface User {
@@ -42,9 +65,9 @@ export interface User {
     created_date: string,
     is_activated: boolean,
     is_deleted: boolean,
-    tokens : {
-        access_token : string,
-        refresh_token : string
+    tokens: {
+        access_token: string,
+        refresh_token: string
     }
 }
 export interface SignupRequest {

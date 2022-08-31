@@ -52,7 +52,7 @@ const SignupView = () => {
     }
     async function onSignupHandler(event: React.MouseEvent) {
         // get token
-        event.preventDefault();
+        // event.preventDefault();
         var isValidUsername = Validation.isValidUsername(signupReq.username);
         var isValidEmail = Validation.isValidEmail(signupReq.email);
         var isValidPassword = Validation.isValidPassword(signupReq.password);

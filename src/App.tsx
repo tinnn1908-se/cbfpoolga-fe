@@ -5,6 +5,7 @@ import Header from './components/header.component';
 import ConfirmEmailView from './views/confirmEmail.view';
 import HomeView from './views/home.view';
 import LoginView from './views/login.view';
+import NFLMasterView from './views/nflmaster.component';
 import NFLSheetView from './views/nflsheet.view';
 import SignupView from './views/signup.view';
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/signup' element={<SignupView />} />
         <Route path='/verifyemail/:token' element={<ConfirmEmailView />} />
         <Route path='/nflsheetview' element={<NFLSheetView />} />
+        <Route path='/nflmasterview' element={<NFLMasterView />} />
       </Routes>
       <Footer />
     </div>

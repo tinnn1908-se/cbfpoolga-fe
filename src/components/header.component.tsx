@@ -78,15 +78,18 @@ const Header = () => {
                                 NFL SHEETS
                             </a> */}
                             <Link className="buttons__link" to='/nflsheetview'>NFL SHEETS</Link>
+                            
+                            
                             <a className="buttons__link" href="https://cbfpoolga.com/NFLMaster">
                                 NCAAF SHEETS
                             </a>
-                            <a
+                            <Link className="buttons__link link-master" to='/nflmasterview'>NFL MASter</Link>
+                            {/* <a
                                 className="buttons__link link-master"
                                 href="https://cbfpoolga.com/NCCASheet"
                             >
                                 NFL MASTER
-                            </a>
+                            </a> */}
                             <a
                                 className="buttons__link link-master"
                                 href="https://cbfpoolga.com/NCCAMaster"
